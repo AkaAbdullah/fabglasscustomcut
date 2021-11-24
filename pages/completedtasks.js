@@ -1,5 +1,5 @@
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
     const res = await fetch('http://localhost:3000/api/tasks');
     const { data } = await res.json();
     return {

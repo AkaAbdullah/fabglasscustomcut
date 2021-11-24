@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
     const res = await fetch('http://localhost:3000/api/customcutprintingreport');
     const { data } = await res.json();
     return {
