@@ -6,15 +6,12 @@ export const getStaticProps = async () => {
     }
 }
 
-
-
-
 const completedtasks = ({ tasks }) => {
     return (
         <>
             {tasks.map(task => {
                 return (
-                    <div key={task}>
+                    <div key={task._id}>
                         <div className="container">
                             <div className="columns">
                                 <div className="column is-half is-offset-one-quarter">
@@ -38,11 +35,5 @@ const completedtasks = ({ tasks }) => {
         </>
     )
 }
-
-// completedtasks.getInitialProps = async () => {
-//     const res = await fetch('http://localhost:3000/api/tasks')
-//     const { data } = await res.json();
-//     return { tasks: data }
-// }
 
 export default completedtasks

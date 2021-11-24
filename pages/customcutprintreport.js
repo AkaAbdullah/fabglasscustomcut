@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 export const getStaticProps = async () => {
     const res = await fetch('http://localhost:3000/api/customcutprintingreport');
     const { data } = await res.json();
@@ -8,33 +10,47 @@ export const getStaticProps = async () => {
 
 
 const customcutprintreport = ({ reports }) => {
+
+    const [searchOrder, setSearchOrder] = useState('');
+
     return (
-        <>
-            <div className="columns is-centered">
+        <div className="container">
+            <div className="columns is-centered is-multiline">
                 <div className="column">
                     <div className="box has-text-centered">
                         <p className="title">Custom Cut printer report</p>
                         <hr />
-                        <p>Filters under process</p>
-                        <input type="date"></input>
-                        <input className="input is-rounded" type="text" placeholder="Search Order No"></input>
+                        <div className="column is-half is-offset-one-quarter">
+                            <div className="box has-background-danger-light mb-5 ">
+                                <p className="subtitle">Search Order Number</p>
+                                <input onChange={event => { setSearchOrder(event.target.value) }} className=" mb-5 input is-rounded" type="text" placeholder="Search...."></input>
+                            </div>
+                        </div>
 
-                        {reports.map(report => {
+                        {reports.filter((val) => {
+                            const count = Object.keys(reports).length;
+                            console.log(count);
+                            if (searchOrder === '') {
+                                return val
+                            } else if (val.DocumentName.toLowerCase().includes(searchOrder.toLowerCase())) {
+                                return val;
+                            }
+                        }).map(report => {
                             return (
-                                <div key={report._id}>
+                                <div className="columns is-centered" key={report._id}>
                                     <table className="table has-text-centered">
                                         <thead className="has-text-centered">
-                                            <tr className="has-text-centered">
-                                                <th >ID</th>
-                                                <th>Order</th>
-                                                <th>Time</th>
-                                                <th>Status</th>
-                                                <th>Printer</th>
-                                                <th>Copies</th>
-                                                <th>Size</th>
-                                                <th>Height</th>
-                                                <th>Width</th>
-                                                <th>Duplex</th>
+                                            <tr className="has-text-centered is-selected">
+                                                <th className="has-text-black">ID</th>
+                                                <th className="has-text-black">Order Number</th>
+                                                <th className="has-text-black">Time</th>
+                                                <th className="has-text-black">Status</th>
+                                                <th className="has-text-black">Printer</th>
+                                                <th className="has-text-black">Copies</th>
+                                                <th className="has-text-black">Size</th>
+                                                <th className="has-text-black">Height</th>
+                                                <th className="has-text-black">Width</th>
+                                                <th className="has-text-black">Duplex</th>
                                             </tr>
                                         </thead>
                                         <tbody className="has-text-centered">
@@ -60,16 +76,9 @@ const customcutprintreport = ({ reports }) => {
                 </div>
             </div>
 
-        </>
+        </div>
     )
 }
-
-
-// customcutprintreport.getInitialProps = async () => {
-//     const res = await fetch('http://localhost:3000/api/customcutprintingreport')
-//     const { data } = await res.json();
-//     return { reports: data }
-// }
 
 
 

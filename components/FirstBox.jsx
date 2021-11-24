@@ -14,6 +14,9 @@ const FirstBox = () => {
                             <Link href="/customcutprintreport">
                                 <a className=" mb-4 button is-fullwidth is-link">Custom Cut Print Report</a>
                             </Link>
+                            <Link href="/readymadeprintreport">
+                                <a className=" mb-4 button is-fullwidth is-link">Ready Made Print Report</a>
+                            </Link>
                             <Link href="/createtask">
                                 <a className="button is-fullwidth is-danger mb-4">Create a Task</a>
                             </Link>
