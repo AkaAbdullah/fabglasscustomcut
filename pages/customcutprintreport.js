@@ -8,7 +8,7 @@ const customcutprintreport = ({ reports }) => {
                         <hr />
                         <p>Filters under process</p>
                         <input type="date"></input>
-                        <input class="input is-rounded" type="text" placeholder="Search Order No"></input>
+                        <input className="input is-rounded" type="text" placeholder="Search Order No"></input>
 
                         {reports.map(report => {
                             return (

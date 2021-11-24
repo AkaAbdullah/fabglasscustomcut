@@ -13,8 +13,8 @@ const completedtasks = ({ tasks }) => {
                                             <p className="card-header-title ">{task.title}</p>
                                             <p className="is-size-7 mt-4">ID: {task._id}</p>
                                         </div>
-                                        <div class="card-content">
-                                            <div class="content">
+                                        <div className="card-content">
+                                            <div className="content">
                                                 {task.description}
                                             </div>
                                         </div>

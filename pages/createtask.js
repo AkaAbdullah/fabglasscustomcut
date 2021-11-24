@@ -70,7 +70,7 @@ const createtask = () => {
                             <label className="label">Title</label>
                             <p className="has-text-danger">{formErrors.title}</p>
                             <input
-                                class="input mb-5"
+                                className="input mb-5"
                                 name="title"
                                 type="text"
                                 placeholder="Enter Title"
@@ -80,7 +80,7 @@ const createtask = () => {
                             <label className="label">Description</label>
                             <p className="has-text-danger">{formErrors.description}</p>
                             <textarea
-                                class="textarea mb-5"
+                                className="textarea mb-5"
                                 name="description"
                                 placeholder="Enter Description"
                                 value={formvalues.description}
