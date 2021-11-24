@@ -9,7 +9,7 @@ import Task from "../../models/TaskModel"
 
 dbconnect();
 
-export default async (req, res) => {
+const App = async (req, res) => {
   const { method } = req;
   switch (method) {
     case 'GET':
@@ -35,3 +35,4 @@ export default async (req, res) => {
       res.status(400).json({ success: false, message: err.message });
   }
 }
+export default App;
