@@ -1,3 +1,12 @@
+export const getStaticProps = async () => {
+    const res = await fetch('http://localhost:3000/api/customcutprintingreport');
+    const { data } = await res.json();
+    return {
+        props: { reports: data }
+    }
+}
+
+
 const customcutprintreport = ({ reports }) => {
     return (
         <>
@@ -12,11 +21,11 @@ const customcutprintreport = ({ reports }) => {
 
                         {reports.map(report => {
                             return (
-                                <div key={report}>
-                                    <table className="table">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
+                                <div key={report._id}>
+                                    <table className="table has-text-centered">
+                                        <thead className="has-text-centered">
+                                            <tr className="has-text-centered">
+                                                <th >ID</th>
                                                 <th>Order</th>
                                                 <th>Time</th>
                                                 <th>Status</th>
@@ -28,7 +37,7 @@ const customcutprintreport = ({ reports }) => {
                                                 <th>Duplex</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody className="has-text-centered">
                                             <tr>
                                                 <td>{report._id}</td>
                                                 <td>{report.DocumentName}</td>
@@ -56,11 +65,11 @@ const customcutprintreport = ({ reports }) => {
 }
 
 
-customcutprintreport.getInitialProps = async () => {
-    const res = await fetch('http://localhost:3000/api/customcutprintingreport')
-    const { data } = await res.json();
-    return { reports: data }
-}
+// customcutprintreport.getInitialProps = async () => {
+//     const res = await fetch('http://localhost:3000/api/customcutprintingreport')
+//     const { data } = await res.json();
+//     return { reports: data }
+// }
 
 
 

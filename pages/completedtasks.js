@@ -1,3 +1,13 @@
+export const getStaticProps = async () => {
+    const res = await fetch('http://localhost:3000/api/tasks');
+    const { data } = await res.json();
+    return {
+        props: { tasks: data }
+    }
+}
+
+
+
 
 const completedtasks = ({ tasks }) => {
     return (
@@ -29,10 +39,10 @@ const completedtasks = ({ tasks }) => {
     )
 }
 
-completedtasks.getInitialProps = async () => {
-    const res = await fetch('http://localhost:3000/api/tasks')
-    const { data } = await res.json();
-    return { tasks: data }
-}
+// completedtasks.getInitialProps = async () => {
+//     const res = await fetch('http://localhost:3000/api/tasks')
+//     const { data } = await res.json();
+//     return { tasks: data }
+// }
 
 export default completedtasks
