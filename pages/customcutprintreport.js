@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export const getStaticProps = async () => {
     const res = await fetch('http://localhost:3000/api/customcutprintingreport');
@@ -9,7 +9,7 @@ export const getStaticProps = async () => {
 }
 
 
-const customcutprintreport = ({ reports }) => {
+const Customcutprintreport = ({ reports }) => {
 
     const [searchOrder, setSearchOrder] = useState('');
 
@@ -83,4 +83,4 @@ const customcutprintreport = ({ reports }) => {
 
 
 
-export default customcutprintreport
+export default Customcutprintreport
