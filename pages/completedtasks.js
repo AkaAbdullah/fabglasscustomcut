@@ -1,6 +1,6 @@
 
 export const getServerSideProps = async () => {
-    const res = await fetch('https://fabglasscustomcut.vercel.app/api/tasks');
+    const res = await fetch('https://fabglass.vercel.app/api/tasks');
     const { data } = await res.json();
     return {
         props: { tasks: data }

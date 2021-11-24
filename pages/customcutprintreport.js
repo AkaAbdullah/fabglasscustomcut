@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 export const getServerSideProps = async () => {
-    const res = await fetch('https://fabglasscustomcut.vercel.app/api/customcutprintingreport');
+    const res = await fetch('https://fabglass.vercel.app/api/customcutprintingreport');
     const { data } = await res.json();
     return {
         props: { reports: data }
