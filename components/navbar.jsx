@@ -1,21 +1,25 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import img from '../public/logo.png'
+import logo from '../public/logo.png'
 
 const Navbar = () => {
     return (
         <div>
-            <nav className="navbar  has-background-danger-light mb-4" role="navigation" aria-label="main navigation">
-                <div className="navbar-brand">
-                    <Link href="/">
-                        <a className="navbar-item">
-                            <Image src={img} placeholder="blur" alt="fabglass" />
-                        </a>
-                    </Link>
+            <nav className="level has-background-danger is-flex-mobile 	">
+                <div className="level-left">
+                    <div className="level-item">
+                        <Link href="/">
+                            <a>
+                                <Image src={logo} width={110} height={35} />
+                            </a>
+                        </Link>
+                    </div>
+
                 </div>
-                <div className="navbar-end is-hidden-mobile">
-                    <Link href="/about">
-                        <a className="navbar-item title is-5"> <span className="is-size-7 mt-1">made with </span> NEXT.JS</a>
+
+                <div className="level-right ">
+                    <Link href="/">
+                        <a className="button is-danger is-small">Login</a>
                     </Link>
                 </div>
             </nav>
