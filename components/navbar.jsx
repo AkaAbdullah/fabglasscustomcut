@@ -10,7 +10,7 @@ const Navbar = () => {
                     <div className="level-item">
                         <Link href="/">
                             <a>
-                                <Image src={logo} width={110} height={35} />
+                                <Image src={logo} width={110} height={35} alt="logo" />
                             </a>
                         </Link>
                     </div>
