@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const FirstBox = () => {
     return (
-        <div className="container is-justify-content-center">
+        <div className="container is-justify-content-center i">
             <div className="columns is-centered ">
                 <div className="column is-3">
                     <div className="card has-background-black-bis">
@@ -32,20 +32,6 @@ const FirstBox = () => {
                 </div>
             </div>
         </div>
-
-        // {/* <Link href="/readymadeprintreport">
-        //     </Link>
-        //     <Link href="/createtask">
-        //         <a className="button is-fullwidth is-danger mb-4">Create a Task</a>
-        //     </Link>
-        //     <Link href="/markorderdeliver">
-        //         <a className="button is-fullwidth is-link mb-4">Mark Order Deliverd Status</a>
-        //     </Link>
-        //     <Link href="/completedtasks">
-        //         <a className="button is-fullwidth is-link">View Completed Tasks</a>
-        //     </Link>
-        // </div> */}
-
     )
 }
 export default FirstBox
